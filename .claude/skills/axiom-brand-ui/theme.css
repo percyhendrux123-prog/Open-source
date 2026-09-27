@@ -1,0 +1,120 @@
+/*
+ * Axiom brand tokens for shadcn/ui + Tailwind v4 (Atomic CRM).
+ * Source of truth: https://deployaxiom.com/assets/site.css (pulled 2026-09-27).
+ * Values marked DERIVED do not exist on the site; they fill gaps a CRM needs.
+ * Contrast ratios are WCAG 2.x against the surface named.
+ */
+
+:root {
+  /* Raw brand palette (from site) */
+  --axiom-paper: #ebe7dc;   /* page background */
+  --axiom-ink: #101310;     /* text, strong borders — 15.1:1 on paper */
+  --axiom-muted: #526056;   /* secondary text — 5.4:1 on paper */
+  --axiom-field: #151915;   /* dark bands, sidebar */
+  --axiom-line: #a8aea3;    /* dividers only — 1.8:1, never an input border */
+  --axiom-signal: #bdff43;  /* fill only, always with ink text — never as text on paper (1.03:1) */
+  --axiom-sage: #dfe5d7;    /* soft panels */
+  --axiom-focus: #4d8000;   /* focus outline — 3.9:1 on paper */
+  --axiom-olive: #445b1a;   /* status/closed label — 6.2:1 on paper */
+  --axiom-field-line: #566057;
+  --axiom-danger: #b3261e;  /* DERIVED — 5.3:1 on paper */
+
+  /* shadcn semantic tokens */
+  --radius: 0rem;           /* site is fully square */
+  --background: var(--axiom-paper);
+  --foreground: var(--axiom-ink);
+  --card: var(--axiom-paper);
+  --card-foreground: var(--axiom-ink);
+  --popover: var(--axiom-paper);
+  --popover-foreground: var(--axiom-ink);
+  --primary: var(--axiom-signal);
+  --primary-foreground: var(--axiom-ink);
+  --secondary: var(--axiom-sage);
+  --secondary-foreground: var(--axiom-ink);
+  --muted: var(--axiom-sage);
+  --muted-foreground: var(--axiom-muted);
+  --accent: var(--axiom-sage);
+  --accent-foreground: var(--axiom-ink);
+  --destructive: var(--axiom-danger);
+  --destructive-foreground: var(--axiom-paper);
+  --border: var(--axiom-line);
+  --input: var(--axiom-ink);
+  --ring: var(--axiom-focus);
+
+  /* Charts — DERIVED order, signal first */
+  --chart-1: var(--axiom-signal);
+  --chart-2: var(--axiom-focus);
+  --chart-3: var(--axiom-muted);
+  --chart-4: var(--axiom-olive);
+  --chart-5: var(--axiom-line);
+
+  /* Sidebar mirrors the site's dark "boundary" band */
+  --sidebar: var(--axiom-field);
+  --sidebar-foreground: var(--axiom-paper);
+  --sidebar-primary: var(--axiom-signal);
+  --sidebar-primary-foreground: var(--axiom-ink);
+  --sidebar-accent: #20261f;  /* DERIVED hover step on field */
+  --sidebar-accent-foreground: var(--axiom-paper);
+  --sidebar-border: var(--axiom-field-line);
+  --sidebar-ring: var(--axiom-signal);
+}
+
+/* Dark mode — DERIVED from the site's field band */
+.dark {
+  --background: var(--axiom-field);
+  --foreground: var(--axiom-paper);   /* 14.4:1 */
+  --card: #1b201b;
+  --card-foreground: var(--axiom-paper);
+  --popover: #1b201b;
+  --popover-foreground: var(--axiom-paper);
+  --primary: var(--axiom-signal);
+  --primary-foreground: var(--axiom-ink);
+  --secondary: #20261f;
+  --secondary-foreground: var(--axiom-paper);
+  --muted: #20261f;
+  --muted-foreground: var(--axiom-line); /* 7.8:1 on field */
+  --accent: #20261f;
+  --accent-foreground: var(--axiom-paper);
+  --destructive: #ff8a7a;                /* 7.8:1 on field */
+  --destructive-foreground: var(--axiom-ink);
+  --border: var(--axiom-field-line);
+  --input: var(--axiom-line);
+  --ring: var(--axiom-signal);
+  --sidebar: #0d100d;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+/* Brand primitives */
+.axiom-wordmark {
+  font-weight: 850;
+  letter-spacing: 0.42em;   /* reads A X I O M */
+  margin-right: -0.42em;    /* cancel trailing tracking so it centers */
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.axiom-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.axiom-heading {
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
