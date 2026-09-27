@@ -91,7 +91,8 @@ body {
 /* Brand primitives */
 .axiom-wordmark {
   font-weight: 850;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.42em;   /* reads A X I O M */
+  margin-right: -0.42em;    /* cancel trailing tracking so it centers */
   text-transform: uppercase;
   text-decoration: none;
 }

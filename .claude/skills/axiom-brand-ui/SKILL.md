@@ -35,7 +35,9 @@ Hard rules, based on the contrast checks:
 - **Radius 0.** Square everywhere: buttons, cards, inputs, badges, avatars included.
 - Borders are 1px solid. Build grids with 1px gaps over a `line` background (the site's `.contract` / `.lanes` pattern).
 - The font is the system sans stack. No webfont, which keeps it fast.
-- Wordmark: `DEPLOY AXIOM`, weight 850, tracking `.14em`, uppercase (`.axiom-wordmark`).
+- Product name: **AXIOM**. Never "Deploy Axiom" in the product; that's the marketing site's name.
+- Wordmark: `AXIOM` rendered as spaced capitals (reads A X I O M), weight 850, tracking `.42em`, uppercase (`.axiom-wordmark`). Put spacing in CSS, never literal spaces, so screen readers say "Axiom". Trim the trailing tracking with `margin-right: -.42em` so it centers.
+- Attribution on client themes: "Powered by AXIOM", same wordmark style at a smaller size.
 - Headings: heavy weight, tracking `-.04em`, line-height about .95 (`.axiom-heading`).
 - Eyebrow labels: `.72rem`, weight 800, tracking `.12em`, uppercase, muted (`.axiom-eyebrow`).
 - Buttons: min-height 46px, weight 800, 1px ink border. Primary is a signal fill; quiet is transparent.
